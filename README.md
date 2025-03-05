@@ -2,13 +2,13 @@
 
 ## **Project Overview**
 
-This project aims to analyze the number of passengers at Istanbul's ferry piers throughout 2024. Using data from the İBB Open Data Portal, various analyses will be conducted on seasonal variations, the most frequently used piers, and passenger mobility.
+This project aims to analyze the number of passengers at Istanbul's seaports throughout 2024. Using data from the İBB Open Data Portal, various analyses will be conducted on seasonal variations, the most frequently used piers, and passenger mobility.
 
 The goal of this study is to gain data-driven insights into Istanbul's maritime transportation usage and generate conclusions for urban transportation planning.
 
 ## **Objectives**
 
-- Analyze the monthly distribution of passenger numbers at Istanbul's ferry piers to observe spring-summer-fall-winter differences.
+- Analyze the monthly distribution of passenger numbers at Istanbul's seaports to observe spring-summer-fall-winter differences.
 - Identify the most and least frequently used piers.
 - Visualize passenger mobility to detect trends.
 - Provide data-driven recommendations for transportation optimization.
@@ -38,7 +38,7 @@ The following tools will be used for data analysis and visualization:
 - **Pandas**: Dataframe manipulation
 - **Matplotlib and Seaborn**: Data visualization
 - **SciPy**: Statistical analysis and hypothesis testing
-- Folium or Geopandas: Mapping ferry piers in Istanbul (maybe)
+- **Folium or Geopandas**: Mapping seaports in Istanbul (maybe)
 
 ## **Analysis Plan**
 
@@ -60,9 +60,9 @@ To determine which piers are the busiest and least used, bar charts and heatmaps
 
 - **Hypothesis Testing:**
 
-  Null Hypothesis (H₀): There is no significant difference in ferry traffic between central locations along the Bosphorus (Beşiktaş, Kadıköy, Eminönü, etc.) and other ferry piers.
+  Null Hypothesis (H₀): There is no significant difference in ferry traffic between central locations along the Bosphorus (Beşiktaş, Kadıköy, Eminönü, etc.) and other seaports.
 
-  Alternative Hypothesis (H₁): Central locations along the Bosphorus (Beşiktaş, Kadıköy, Eminönü, etc.) have significantly higher ferry traffic than other ferry piers.
+  Alternative Hypothesis (H₁): Central locations along the Bosphorus (Beşiktaş, Kadıköy, Eminönü, etc.) have significantly higher ferry traffic than other seaports.
 - **Analysis:** Total passenger numbers for each pier will be calculated, and the top and bottom piers will be listed.
 - **Visualization:** A map of the piers will be created, highlighting the busiest locations using a heatmap.
 
