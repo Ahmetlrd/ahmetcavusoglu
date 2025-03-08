@@ -1,4 +1,4 @@
-# **Istanbul Seaports Data-DSA210Project**
+# **Istanbul Seaports Data - DSA210 Project**
 
 ## **Project Overview**
 
@@ -11,16 +11,19 @@ The goal of this study is to gain data-driven insights into Istanbul's maritime 
 - Analyze the monthly distribution of passenger numbers at Istanbul's seaports to observe spring-summer-fall-winter differences.
 - Identify the most and least frequently used piers.
 - Visualize passenger mobility to detect trends.
+- Investigate the impact of wind speed on passenger numbers.
 - Provide data-driven recommendations for transportation optimization.
-- Apply Sata Science Skills\:Apply the concepts from my DSA 210 course to real-world scenarios, deepening my understanding of data analysis and visualization.
+- Apply the concepts from my DSA 210 course to real-world scenarios, deepening my understanding of data analysis and visualization.
 
 ## **Motivation**
 
 This project was chosen to understand the usage patterns of maritime transportation in Istanbul and to apply data science techniques to a real-world problem. In a particular metropolitan city like Istanbul, public transportation analyses play a crucial role in transportation planning and infrastructure development.
 
+Additionally, external factors such as weather conditions may significantly influence passenger mobility. Therefore, wind speed data will be incorporated into the analysis to examine its potential effect on maritime transportation.
+
 ## **Dataset**
 
-The dataset used in this project is obtained from the İBB Open Data Portal and contains passenger counts at Istanbul's Seaports for the year 2024. The dataset includes the following columns:
+The dataset used in this project is obtained from the İBB Open Data Portal and contains passenger counts at Istanbul's seaports for the year 2024. The dataset includes the following columns:
 
 - **Year**: Data from 2024
 - **Month**: Covers the period from January to December
@@ -28,7 +31,13 @@ The dataset used in this project is obtained from the İBB Open Data Portal and 
 - **Station Name**: The seaports where passenger transportation occurs
 - **Passenger Count**: The total number of passengers passing through a specific pier in a given month
 
-Since the dataset contains separate records for each month, it allows for time series analysis.
+### **Additional Dataset: Wind Speed Data**
+
+An additional dataset from [WeatherSpark](https://tr.weatherspark.com/y/95434/%C4%B0stanbul-T%C3%BCrkiye-Ortalama-Hava-Durumu-Y%C4%B1l-Boyunca#Figures-WindSpeed) will be used to analyze the impact of wind speed on passenger mobility. The dataset includes:
+
+- **Date**: The day of recorded wind speed.
+- **Average Wind Speed (km/h)**: The daily mean wind speed in Istanbul.
+- **Max Wind Speed (km/h)**: The highest recorded wind speed of the day.
 
 ## **Tools and Technologies**
 
@@ -38,35 +47,32 @@ The following tools will be used for data analysis and visualization:
 - **Pandas**: Dataframe manipulation
 - **Matplotlib and Seaborn**: Data visualization
 - **SciPy**: Statistical analysis and hypothesis testing
-- **Folium or Geopandas**: Mapping seaports in Istanbul (maybe)
+- **Folium or Geopandas**: Mapping seaports in Istanbul (optional)
 
 ## **Analysis Plan**
 
-### **1. Monthly Passenger Distribution and Seasonal Differences**
+### **Investigating the Impact of Wind Speed on Passenger Mobility**
 
-To examine changes in passenger numbers between summer and winter months, boxplots and time series plots will be used.
+To explore how wind speed affects passenger counts, correlation analysis, regression models, and time series plots will be utilized.
 
-- **Hypothesis Testing:**
+- **Data Collection:**
+  - The wind speed dataset will be merged with the passenger dataset based on the corresponding dates.
+  - Missing values will be handled, and the units will be standardized.
 
-  Null Hypothesis (H₀): There is no significant difference in passenger numbers between summer (June, July, August) and winter months.
-
-  Alternative Hypothesis (H₁): Passenger numbers in summer (June, July, August) are significantly higher than in winter months.
-- ***Statistical Test:*** ANOVA or t-test will be applied to determine if the seasonal differences are statistically significant.
-- **Visualization:** A time series graph of monthly passenger counts will be created, and moving averages will be calculated for trend analysis.
-
-### **2. Identifying the Most and Least Used Piers**
-
-To determine which piers are the busiest and least used, bar charts and heatmaps will be utilized.
+- **Visualization:**
+  - Scatter plots will be created to examine the relationship between wind speed and passenger numbers.
+  - A heatmap will be used to show correlations between wind speed and other variables.
+  - Time series plots will compare passenger trends with wind speed fluctuations over the months.
 
 - **Hypothesis Testing:**
 
-  Null Hypothesis (H₀): There is no significant difference in ferry traffic between central locations along the Bosphorus (Beşiktaş, Kadıköy, Eminönü, etc.) and other seaports.
+  Null Hypothesis (H₀): Wind speed has no significant effect on passenger numbers.
 
-  Alternative Hypothesis (H₁): Central locations along the Bosphorus (Beşiktaş, Kadıköy, Eminönü, etc.) have significantly higher ferry traffic than other seaports.
-- **Analysis:** Total passenger numbers for each pier will be calculated, and the top and bottom piers will be listed.
-- **Visualization:** A map of the piers will be created, highlighting the busiest locations using a heatmap.
+  Alternative Hypothesis (H₁): Wind speed has a significant effect on passenger numbers.
 
-Additional data sources (For example: meteorological data and official holiday information) may be used for this analysis.
+- **Statistical Analysis:**
+  - A linear regression model will be applied to determine if there is a measurable impact of wind speed on ferry passenger numbers.
+  - Multiple regression may be used to control for other seasonal effects.
 
 ## **Findings**
 
@@ -75,6 +81,7 @@ The following insights are expected as a result of these analyses:
 - Seasonal differences in maritime transportation usage will be clearly observed.
 - Identifying the busiest piers can help optimize transportation planning.
 - The impact of particular months on passenger numbers will be revealed.
+- The influence of wind speed on passenger mobility will be analyzed, potentially uncovering insights for service adjustments during high-wind periods.
 
 ## **Limitations and Future Work**
 
@@ -84,7 +91,7 @@ The following insights are expected as a result of these analyses:
 
 ## **Conclusion**
 
-This project aims to understand the usage patterns of maritime transportation in Istanbul and apply data science techniques to a real-world problem. By considering seasonal changes, pier-based analysis, and various external factors, passenger mobility will be examined in detail.
+This project aims to understand the usage patterns of maritime transportation in Istanbul and apply data science techniques to a real-world problem. By considering seasonal changes, pier-based analysis, and weather conditions, passenger mobility will be examined in detail.
 
 The findings of this study may contribute to more efficient decision-making in maritime transportation management and urban planning. At the end of the project, data-driven optimization recommendations for Istanbul’s maritime transportation system will be provided.
 
