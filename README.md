@@ -1,4 +1,4 @@
-# **Number of Passengers at Istanbul Seaports-DSA210Project**
+# **Istanbul Seaports Data-DSA210Project**
 
 ## **Project Overview**
 
