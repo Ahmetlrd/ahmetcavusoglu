@@ -23,7 +23,7 @@ Additionally, external factors such as weather conditions may significantly infl
 
 ## **Dataset**
 
-The dataset used in this project is obtained from the İBB Open Data Portal and contains passenger counts at Istanbul's seaports for the year 2024. The dataset includes the following columns:
+The dataset used in this project is obtained from the [İBB Open Data Portal](https://ulasav.csb.gov.tr/dataset/34-istanbul-deniz-iskeleleri-yolcu-sayilari/resource/189d7304-2646-43f7-b4ba-3b689f444683) and contains passenger counts at Istanbul's seaports for the year 2024. The dataset includes the following columns:
 
 - **Year**: Data from 2024
 - **Month**: Covers the period from January to December
