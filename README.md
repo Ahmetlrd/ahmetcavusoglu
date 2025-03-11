@@ -23,7 +23,7 @@ Additionally, external factors such as weather conditions may significantly infl
 
 ## **Dataset**
 
-The dataset used in this project is obtained from the [İBB Open Data Portal](https://ulasav.csb.gov.tr/dataset/34-istanbul-deniz-iskeleleri-yolcu-sayilari/resource/189d7304-2646-43f7-b4ba-3b689f444683) and contains passenger counts at Istanbul's seaports for the year 2024. The dataset includes the following columns:
+The dataset used in this project is obtained from the [İBB Open Data Portal](https://ulasav.csb.gov.tr/dataset/34-istanbul-deniz-iskeleleri-yolcu-sayilari/resource/189d7304-2646-43f7-b4ba-3b689f444683) by downloading and contains passenger counts at Istanbul's seaports for the year 2024. The dataset includes the following columns:
 
 - **Year**: Data from 2024
 - **Month**: Covers the period from January to December
@@ -33,7 +33,7 @@ The dataset used in this project is obtained from the [İBB Open Data Portal](ht
 
 ### **Additional Dataset: Wind Speed Data**
 
-An additional dataset from [WeatherSpark](https://tr.weatherspark.com/y/95434/%C4%B0stanbul-T%C3%BCrkiye-Ortalama-Hava-Durumu-Y%C4%B1l-Boyunca#Figures-WindSpeed) will be used to analyze the impact of wind speed on passenger mobility. The dataset includes:
+An additional dataset from [WeatherSpark](https://tr.weatherspark.com/y/95434/%C4%B0stanbul-T%C3%BCrkiye-Ortalama-Hava-Durumu-Y%C4%B1l-Boyunca#Figures-WindSpeed) will be used to analyze the impact of wind speed on passenger mobility by downloading. The dataset includes:
 
 - **Date**: The day of recorded wind speed.
 - **Average Wind Speed (km/h)**: The daily mean wind speed in Istanbul.
