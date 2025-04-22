@@ -1,97 +1,132 @@
 # **Istanbul Seaports Data - DSA210 Project**
 
-## **Project Overview**
+# Istanbul Seaports Data - DSA210 Project
 
-This project aims to analyze the number of passengers at Istanbul's seaports throughout 2024. Using data from the İBB Open Data Portal, various analyses will be conducted on seasonal variations, the most frequently used piers, and passenger mobility.
+## Project Overview
 
-The goal of this study is to gain data-driven insights into Istanbul's maritime transportation usage and generate conclusions for urban transportation planning.
+This project analyzes the daily passenger counts at Istanbul's seaports for the year 2024. Using datasets from the İBB Open Data Portal and supplementary weather data, the study explores seasonal variation, pier usage patterns, and how environmental factors such as wind affect ferry mobility.
 
-## **Objectives**
+The ultimate goal is to derive actionable insights for urban maritime transportation planning using statistical methods and data visualization.
 
-- Analyze the monthly distribution of passenger numbers at Istanbul's seaports to observe spring-summer-fall-winter differences.
-- Identify the most and least frequently used piers.
-- Visualize passenger mobility to detect trends.
-- Investigate the impact of wind speed on passenger numbers.
-- Provide data-driven recommendations for transportation optimization.
-- Apply the concepts from my DSA 210 course to real-world scenarios, deepening my understanding of data analysis and visualization.
+## Objectives
 
-## **Motivation**
+- Examine daily and monthly variations in passenger numbers.
+- Identify the busiest and least used seaports.
+- Visualize passenger trends and detect behavioral patterns.
+- Analyze the effect of weather variables (wind speed, humidity, temperature) on ferry usage.
+- Investigate the difference in passenger counts between school terms and holiday periods.
+- Conduct correlation and regression analysis to test statistical significance.
+- Apply DSA210 course methods to real-world public transportation data.
 
-This project was chosen to understand the usage patterns of maritime transportation in Istanbul and to apply data science techniques to a real-world problem. In a particular metropolitan city like Istanbul, public transportation analyses play a crucial role in transportation planning and infrastructure development.
+## Motivation
 
-Additionally, external factors such as weather conditions may significantly influence passenger mobility. Therefore, wind speed data will be incorporated into the analysis to examine its potential effect on maritime transportation.
+Istanbul, being a densely populated metropolitan city with an extensive public transportation system, requires continuous data-driven evaluation. Understanding the factors that influence ferry usage, including seasonal changes and weather conditions, is essential for reliable urban transport planning.
 
-## **Dataset**
+Maritime transportation is particularly vulnerable to environmental factors like wind, which can disrupt service or change rider behavior. Additionally, school calendars (term vs. holiday periods) may influence commuter patterns, which are also explored in this study.
 
-The dataset used in this project is obtained from the [İBB Open Data Portal](https://ulasav.csb.gov.tr/dataset/34-istanbul-deniz-iskeleleri-yolcu-sayilari/resource/189d7304-2646-43f7-b4ba-3b689f444683) by downloading and contains passenger counts at Istanbul's seaports for the year 2024. The dataset includes the following columns:
+## Dataset
 
-- **Year**: Data from 2024
-- **Month**: Covers the period from January to December
-- **Authority Name**: The entity managing the ferry service
-- **Station Name**: The seaports where passenger transportation occurs
-- **Passenger Count**: The total number of passengers passing through a specific pier in a given month
+The primary dataset is downloaded from the [İBB Open Data Portal](https://ulasav.csb.gov.tr/dataset/34-istanbul-deniz-iskeleleri-yolcu-sayilari/resource/189d7304-2646-43f7-b4ba-3b689f444683) and includes:
 
-### **Additional Dataset: Wind Speed Data**
+- **Date**: Daily records for 2024
+- **Station Name**: The seaport where the passengers boarded
+- **Passenger Count**: Daily count per pier
 
-An additional dataset from [WeatherSpark](https://tr.weatherspark.com/y/95434/%C4%B0stanbul-T%C3%BCrkiye-Ortalama-Hava-Durumu-Y%C4%B1l-Boyunca#Figures-WindSpeed) will be used to analyze the impact of wind speed on passenger mobility by downloading. The dataset includes:
+### Additional Dataset: Weather and School Term Data
 
-- **Date**: The day of recorded wind speed.
-- **Average Wind Speed (km/h)**: The daily mean wind speed in Istanbul.
-- **Max Wind Speed (km/h)**: The highest recorded wind speed of the day.
+A supplementary weather dataset is downloaded from [WeatherSpark](https://tr.weatherspark.com) and includes:
 
-## **Tools and Technologies**
+- **Average Wind Speed (km/h)**
+- **Maximum Wind Speed (km/h)**
+- **Temperature (max, min)**
+- **Humidity (%)**
 
-The following tools will be used for data analysis and visualization:
+Additionally, school calendar information is manually encoded as:
 
-- **Python**: Data processing and analysis
-- **Pandas**: Dataframe manipulation
-- **Matplotlib and Seaborn**: Data visualization
-- **SciPy**: Statistical analysis and hypothesis testing
-- **Folium or Geopandas**: Mapping seaports in Istanbul (optional)
+- **School Term (1)**: Dates when schools are open
+- **Holiday Period (0)**: Dates when schools are on break
 
-## **Analysis Plan**
+These variables are merged by date to conduct multivariate analysis.
 
-### **Investigating the Impact of Wind Speed on Passenger Mobility**
+## Tools and Technologies
 
-To explore how wind speed affects passenger counts, correlation analysis, regression models, and time series plots will be utilized.
+- **Python**: Analysis and modeling
+- **Pandas**: Data manipulation
+- **Matplotlib & Seaborn**: Visualization
+- **SciPy & Statsmodels**: Hypothesis testing and regression
 
-- **Data Collection:**
-  - The wind speed dataset will be merged with the passenger dataset based on the corresponding dates.
-  - Missing values will be handled, and the units will be standardized.
+## Analysis Plan
 
-- **Visualization:**
-  - Scatter plots will be created to examine the relationship between wind speed and passenger numbers.
-  - A heatmap will be used to show correlations between wind speed and other variables.
-  - Time series plots will compare passenger trends with wind speed fluctuations over the months.
+### Investigating the Impact of Weather and School Terms on Passenger Mobility
+
+- **Data Preparation:**
+
+  - Merge weather, school term, and passenger datasets by date.
+  - Handle missing data and calculate average temperature.
+  - Create categorical variables like wind condition (Calm, Breezy, Windy) and school term (Holiday vs School).
+
+- **Visualizations:**
+
+  - **Bar Plots:**
+    - *Daily passenger count by day of the week and school term:* Shows how holidays impact weekday travel behavior.
+    - *Daily passenger count by day of the week and wind condition:* Highlights the effect of wind on passenger numbers throughout the week.
+  - **Heatmaps:**
+    - *Correlation matrix:* Shows relationships between daily passenger count and weather variables (wind, humidity, temperature), as well as school term.
+  - **Boxplots:**
+    - *Holiday vs School Term:* Compares passenger distribution clearly, showing higher counts during holidays.
+  - **Multivariate Bar Plot (Triple Grouping):**
+    - *Passenger count grouped by weekday and wind category (Calm, Breezy, Windy):* Reveals compound patterns influenced by both time and weather.
 
 - **Hypothesis Testing:**
 
-  Null Hypothesis (H₀): Wind speed has no significant effect on passenger numbers.
+  **1. Weather Effect**
 
-  Alternative Hypothesis (H₁): Wind speed has a significant effect on passenger numbers.
+  - Null Hypothesis (H₀): Weather variables have no significant effect on passenger numbers.
 
-- **Statistical Analysis:**
-  - A linear regression model will be applied to determine if there is a measurable impact of wind speed on ferry passenger numbers.
-  - Multiple regression may be used to control for other seasonal effects.
+  - Alternative Hypothesis (H₁): At least one weather variable has a significant effect on passenger numbers.
 
-## **Findings**
+  - ANOVA results:
 
-The following insights are expected as a result of these analyses:
+    - Wind Speed: p-value < 0.0001 (**significant**)
+    - Humidity: p-value = 0.48 (not significant)
+    - Temperature: p-value = 0.95 (not significant)
 
-- Seasonal differences in maritime transportation usage will be clearly observed.
-- Identifying the busiest piers can help optimize transportation planning.
-- The impact of particular months on passenger numbers will be revealed.
-- The influence of wind speed on passenger mobility will be analyzed, potentially uncovering insights for service adjustments during high-wind periods.
+  ✅ H₀ is rejected.
 
-## **Limitations and Future Work**
+  **Conclusion:** Wind speed significantly affects ferry usage, while humidity and temperature do not.
 
-- **Limitations:** Since the dataset covers only 2024, it will not be possible to analyze long-term trends.
-- **Future Studies:** By incorporating data from multiple years, long-term trends in Istanbul’s sea transportation can be analyzed.
-- **Additional Data Usage:** External factors such as weather conditions, service disruptions, and tourism activity can be included to perform a more comprehensive analysis.
+  **2. School Term Effect**
 
-## **Conclusion**
+  - Null Hypothesis (H₀): There is no significant difference in the average number of daily ferry passengers between school holiday periods and school term periods.
 
-This project aims to understand the usage patterns of maritime transportation in Istanbul and apply data science techniques to a real-world problem. By considering seasonal changes, pier-based analysis, and weather conditions, passenger mobility will be examined in detail.
+  - Alternative Hypothesis (H₁): The average number of daily ferry passengers during school holidays is significantly higher than during school term periods.
 
-The findings of this study may contribute to more efficient decision-making in maritime transportation management and urban planning. At the end of the project, data-driven optimization recommendations for Istanbul’s maritime transportation system will be provided.
+  - p-value = 0.0021 (**significant**)
+
+  ✅ H₀ is rejected.
+
+  **Conclusion:** Daily ferry usage is significantly higher during holiday periods compared to school terms.
+
+- **Regression Analysis:**
+
+  - A multiple linear regression model was applied.
+  - Wind speed and school term emerged as significant predictors of daily passenger count.
+  - The model confirms findings from correlation and hypothesis tests.
+
+## Findings
+
+- Daily passenger usage is higher during holiday periods than school terms.
+- Windy days correspond to a lower number of ferry passengers.
+- Weekday and weather combinations (e.g., Windy Fridays) show clear impact patterns.
+- Temperature and humidity alone do not explain changes in ferry usage.
+
+## Limitations and Future Work
+
+- The analysis is limited to 2024 and does not consider long-term trends.
+- Including more years would allow more robust seasonal modeling.
+- Future versions could integrate tourism data, service disruption logs, and ticket pricing.
+
+## Conclusion
+
+This project provides actionable insights on how Istanbul's maritime transport system is influenced by external factors like wind and school calendars. The findings can support public service planning, schedule optimization, and seasonal resource allocation. By applying DSA210 course methods, the project bridges academic knowledge with real-world transportation data challenges.
 
