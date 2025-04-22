@@ -1,16 +1,15 @@
-# **Istanbul Seaports Data - DSA210 Project**
+# Istanbul Seaports Data - DSA210 Project
 
 ## Project Overview
 
-This project analyzes the daily passenger counts at Istanbul's seaports for the year 2024. Using datasets from the İBB Open Data Portal and supplementary weather data, the study explores seasonal variation, pier usage patterns, and how environmental factors such as wind affect ferry mobility.
+This project analyzes the daily passenger counts at the **Beşiktaş pier**, one of Istanbul's busiest seaports, for the year 2024. Using datasets from the İBB Open Data Portal and supplementary weather data, the study explores seasonal variation, usage patterns at Beşiktaş, and how environmental factors such as wind affect ferry mobility.
 
 The ultimate goal is to derive actionable insights for urban maritime transportation planning using statistical methods and data visualization.
 
 ## Objectives
 
-- Examine daily and monthly variations in passenger numbers.
-- Identify the busiest and least used seaports.
-- Visualize passenger trends and detect behavioral patterns.
+- Examine daily and monthly variations in passenger numbers at Beşiktaş.
+- Visualize trends in ferry usage specific to the Beşiktaş pier.
 - Analyze the effect of weather variables (wind speed, humidity, temperature) on ferry usage.
 - Investigate the difference in passenger counts between school terms and holiday periods.
 - Conduct correlation and regression analysis to test statistical significance.
@@ -30,6 +29,8 @@ The primary dataset is downloaded from the [İBB Open Data Portal](https://ulasa
 - **Station Name**: The seaport where the passengers boarded
 - **Passenger Count**: Daily count per pier
 
+This project filters and focuses exclusively on data from the **Beşiktaş pier**.
+
 ### Additional Dataset: Weather and School Term Data
 
 A supplementary weather dataset is downloaded from [WeatherSpark](https://tr.weatherspark.com) and includes:
@@ -44,7 +45,7 @@ Additionally, school calendar information is manually encoded as:
 - **School Term (1)**: Dates when schools are open
 - **Holiday Period (0)**: Dates when schools are on break
 
-These variables are merged by date to conduct multivariate analysis.
+These variables are merged by date to conduct multivariate analysis specific to the Beşiktaş station.
 
 ## Tools and Technologies
 
@@ -59,15 +60,15 @@ These variables are merged by date to conduct multivariate analysis.
 
 - **Data Preparation:**
 
-  - Merge weather, school term, and passenger datasets by date.
+  - Merge weather, school term, and Beşiktaş passenger datasets by date.
   - Handle missing data and calculate average temperature.
   - Create categorical variables like wind condition (Calm, Breezy, Windy) and school term (Holiday vs School).
 
 - **Visualizations:**
 
   - **Bar Plots:**
-    - *Daily passenger count by day of the week and school term:* Shows how holidays impact weekday travel behavior.
-    - *Daily passenger count by day of the week and wind condition:* Highlights the effect of wind on passenger numbers throughout the week.
+    - *Daily passenger count by day of the week and school term (Beşiktaş):* Shows how holidays impact weekday travel behavior.
+    - *Daily passenger count by day of the week and wind condition (Beşiktaş):* Highlights the effect of wind on passenger numbers throughout the week.
   - **Heatmaps:**
     - *Correlation matrix:* Shows relationships between daily passenger count and weather variables (wind, humidity, temperature), as well as school term.
   - **Boxplots:**
@@ -89,7 +90,7 @@ These variables are merged by date to conduct multivariate analysis.
     - Humidity: p-value = 0.48 (not significant)
     - Temperature: p-value = 0.95 (not significant)
 
-  ✅ H₀ is rejected.
+  H₀ is rejected.
 
   **Conclusion:** Wind speed significantly affects ferry usage, while humidity and temperature do not.
 
@@ -101,19 +102,19 @@ These variables are merged by date to conduct multivariate analysis.
 
   - p-value = 0.0021 (**significant**)
 
-  ✅ H₀ is rejected.
+  H₀ is rejected.
 
   **Conclusion:** Daily ferry usage is significantly higher during holiday periods compared to school terms.
 
 - **Regression Analysis:**
 
   - A multiple linear regression model was applied.
-  - Wind speed and school term emerged as significant predictors of daily passenger count.
+  - Wind speed and school term emerged as significant predictors of daily passenger count at Beşiktaş.
   - The model confirms findings from correlation and hypothesis tests.
 
 ## Findings
 
-- Daily passenger usage is higher during holiday periods than school terms.
+- Daily passenger usage at Beşiktaş is higher during holiday periods than school terms.
 - Windy days correspond to a lower number of ferry passengers.
 - Weekday and weather combinations (e.g., Windy Fridays) show clear impact patterns.
 - Temperature and humidity alone do not explain changes in ferry usage.
@@ -126,5 +127,5 @@ These variables are merged by date to conduct multivariate analysis.
 
 ## Conclusion
 
-This project provides actionable insights on how Istanbul's maritime transport system is influenced by external factors like wind and school calendars. The findings can support public service planning, schedule optimization, and seasonal resource allocation. By applying DSA210 course methods, the project bridges academic knowledge with real-world transportation data challenges.
+This project provides actionable insights on how Istanbul's maritime transport system—specifically the Beşiktaş pier—is influenced by external factors like wind and school calendars. The findings can support public service planning, schedule optimization, and seasonal resource allocation. By applying DSA210 course methods, the project bridges academic knowledge with real-world transportation data challenges.
 
