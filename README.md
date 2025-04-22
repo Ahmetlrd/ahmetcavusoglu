@@ -1,7 +1,5 @@
 # **Istanbul Seaports Data - DSA210 Project**
 
-# Istanbul Seaports Data - DSA210 Project
-
 ## Project Overview
 
 This project analyzes the daily passenger counts at Istanbul's seaports for the year 2024. Using datasets from the İBB Open Data Portal and supplementary weather data, the study explores seasonal variation, pier usage patterns, and how environmental factors such as wind affect ferry mobility.
