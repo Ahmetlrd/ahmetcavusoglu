@@ -96,15 +96,15 @@ These variables are merged by date to conduct multivariate analysis specific to 
 
   **2. School Term Effect**
 
-  - Null Hypothesis (H₀): There is no significant difference in the average number of daily ferry passengers between school holiday periods and school term periods.
+  - Null Hypothesis (H₀): The average number of daily ferry passengers during holidays is less than or equal to that during school terms.
 
-  - Alternative Hypothesis (H₁): The average number of daily ferry passengers during school holidays is significantly higher than during school term periods.
+  - Alternative Hypothesis (H₁): The average number of daily ferry passengers during holidays is greater than that during school terms.
 
   - p-value = 0.0021 (**significant**)
 
   H₀ is rejected.
 
-  **Conclusion:** Daily ferry usage is significantly higher during holiday periods compared to school terms.
+  **Conclusion:** The average number of daily ferry passengers during holidays is greater than that during school terms.
 
 - **Regression Analysis:**
 
